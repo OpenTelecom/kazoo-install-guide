@@ -394,8 +394,54 @@ name bigcouch at port 11500
 
 kazoo-applications status
 ```
-[Check status](https://www.powerpbx.org/sites/default/files/kazoo-applications-status.txt " Check kazoo status")
+**Output**
 
+```
+kazoo-applications status
+Node          : kazoo_apps@somedomain.local
+md5           : jFoOSYRl8EM8hPzqzjSIEw
+Version       : 4.1.41 - 18
+Memory Usage  : 76.44MB
+Processes     : 1682
+Ports         : 20
+Zone          : local
+Broker        : amqp://127.0.0.1:5672
+Globals       : local (4)
+Node Info     : kz_amqp_pool: 150/0/0 (ready)
+WhApps        : blackhole(5m45s)         callflow(5m45s)          cdr(5m45s)               conference(5m45s)
+                crossbar(5m44s)          fax(5m36s)               hangups(5m16s)           media_mgr(5m16s)
+                milliwatt(5m16s)         omnipresence(5m16s)      pivot(5m16s)             registrar(5m16s)
+                reorder(5m16s)           stepswitch(5m16s)        sysconf(5m45s)           tasks(5m16s)
+                teletype(4m13s)          trunkstore(4m11s)        webhooks(4m11s)
+
+Node          : kamailio@somedomain.local
+Version       : 5.0.3
+Memory Usage  : 15.27MB
+Zone          : local
+Broker        : amqp://127.0.0.1:5672
+WhApps        : kamailio(6m2s)
+Roles         : Dispatcher Presence Registrar
+Dispatcher 1  : sip:serverIP:11000 (AP)
+Subscribers   :
+Subscriptions :
+Presentities  : presence (0)  dialog (0)  message-summary (0)
+Registrations : 0
+
+Node          : ecallmgr@somedomain.local
+md5           : 9hsLTuppG8oNQRSGmU6cwA
+Version       : 4.1.41 - 18
+Memory Usage  : 49.67MB
+Processes     : 1134
+Ports         : 28
+Zone          : local
+Broker        : amqp://127.0.0.1:5672
+Globals       : remote (4)
+Node Info     : kz_amqp_pool: 150/0/0 (ready)
+WhApps        : ecallmgr(5m45s)
+Channels      : 0
+Registrations : 0
+Media Servers : freeswitch@somedomain.local (5m39s)
+```
 
 ## Post Install
 
