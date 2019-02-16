@@ -26,7 +26,7 @@ Enter your credentials as prompted
 Upload your public key to the AWS console
 
 ```
-aws ec2 import-key-pair --key-name "otf_kazoo_key" --public-key-material file://~/.ssh/id_rsa.pub`
+aws ec2 import-key-pair --key-name otf_kazoo_key --public-key-material file://~/.ssh/id_rsa.pub
 ```
 
 Output:
@@ -40,7 +40,7 @@ Output:
 
 ## Create Security Group
 ```
-aws ec2 create-security-group --group-name otf_kazoo_sg1 --description "OTF_kazoo-Security_group
+aws ec2 create-security-group --group-name otf_kazoo_sg1 --description OTF_kazoo-Security_group
 ```
 
 **Output**:
@@ -66,11 +66,11 @@ aws ec2 run-instances --image-id ami-e1496384 --count 1 --instance-type t2.large
 **for tcp add all the following ports**
 
 ```
-aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 22 --cidr 0.0.0.0/0`
+aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 22 --cidr 0.0.0.0/0
 
 aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 8000 --cidr 0.0.0.0/0
 
-aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 8443 --cidr 0.0.0.0/0`
+aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 8443 --cidr 0.0.0.0/0
 
 aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol tcp --port 1111 --cidr 0.0.0.0/0
 
@@ -91,8 +91,6 @@ aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol u
 aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol udp --port 10000-40000 --cidr 0.0.0.0/0
 
 aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol udp --port 5060 --cidr 0.0.0.0/0
-
-aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol icmp --port  --cidr 0.0.0.0/0
 
 aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol icmp --port all --cidr 0.0.0.0/0
 ```
