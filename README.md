@@ -10,8 +10,12 @@ Once you have a AWS account set up, install AWS CLI on your machine, this guide 
 (HINT : ```ssh-keygen```).
 
 ```
+# for macOS users
+
 brew install awscli
 ```
+
+
 After install, run
 
 ```
