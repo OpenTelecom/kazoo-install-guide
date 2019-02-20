@@ -98,12 +98,13 @@ aws ec2 authorize-security-group-ingress --group-name otf_kazoo_sg1 --protocol i
 
 ## SSH into instance
 
-**Get public IP of instance**
-``` 
-aws ec2 describe-instances --instance-ids instance-id --query 'Reservations[].Instances[].PublicDnsName'
-```
+**Get the public IP of the instance**
 
- # Replace instance id with your instane’s ID from your aws console
+**Replace 'instance-id' with the instance ID from your AWS console**
+
+``` 
+aws ec2 describe-instances --instance-ids 'instance-id' --query 'Reservations[].Instances[].PublicDnsName'
+```
 
 *Using Results from the terminal which should look like this*
 
